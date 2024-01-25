@@ -1,15 +1,18 @@
- #include <string.h>
+#include <string.h>
 
 void	*memcpy(void *dest, const void *src, size_t n)
 {
-unsigned char	*p;
+const unsigned char	*s;
+unsigned char	*d;
 size_t	i;
 
-p = dest;
+s = (unsigned char*)src;
+d = (unsigned char*)dest;
+
 i = 0;
 while(i < n)
 {
-	p[i] = src[i];
+	d[i] = s[i];
 	i++;
 }
 	return (dest);
