@@ -1,13 +1,13 @@
 #include <string.h>
 #include <stdio.h>
-
+/*
 size_t ft_strlcat(char	*dst, const char	*src, size_t	dstsize);
 
 int main(void)
 {
 const char source[] = "hello";
-char destination[] = "helloo";
-size_t size = 1;
+char destination[] = "hello";
+size_t size = 2;
 size_t result = 0;
 //size_t oresult = 0;
 
@@ -16,7 +16,7 @@ result = ft_strlcat(destination, source, size);
 printf("My the length of the concatenate string is %li\n", result);
 //printf("OG length of the concatenate string is %li\n", oresult);
 }
-
+*/
 size_t ft_strlcat(char	*dst, const char	*src, size_t	dstsize)
 {
 size_t				ls;
@@ -34,22 +34,23 @@ while(s[ls] != '\0')
 ls++;
 while(d[ld] != '\0')
 ld++;
-if(ld == dstsize)
+if(ld >= dstsize)
 {
-return (ls + ld + 1);
+return (ls + ld);
 }
 else if(dstsize >= (ls + ld))
 {
-	while(i < (dstsize + ls) && s[i] != '\0')
+	while(i < (dstsize - ld - 1) && s[i] != '\0')
 	{
 		d[ld] = s[i];
+		ld++;
 		i++;
 	}
-d[ld + i] = '\0';
+d[ld] = '\0';
 return (ls + ld);
 }
 else
 {
-	return (ls + ld);
+	return (ls + dstsize);
 }
 }
