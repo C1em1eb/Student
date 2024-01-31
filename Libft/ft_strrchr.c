@@ -11,9 +11,16 @@ int c = 'l';
 char *result;
 
 result = ft_strrchr(s, c);
-printf("the adress of the pointer is %p\n", &result);
-printf("the string of the pointer is %s\n", result);
-printf("the specific character of the pointer is %c\n", *result);
+if (result != NULL)
+{
+	printf("the adress of the pointer is %p\n", result);
+	printf("the string of the pointer is %s\n", result);
+	printf("the specific character of the pointer is %c\n", *result);
+}
+else
+{
+    printf("Character not found\n");
+}
 return (0);
 } */
 
