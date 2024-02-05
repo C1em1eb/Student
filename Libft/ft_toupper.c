@@ -1,8 +1,8 @@
-#include <unistd.h>
+#include "libft.h"
 
-int	ft_toupper(int c);
+/*int	ft_toupper(int c);
 
-/* int main(void)
+int	main(void)
 {
 	int result = 0;
 	int c = 'J';
