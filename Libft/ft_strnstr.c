@@ -5,9 +5,9 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t len);
 
 int main(void)
 {
-const char haystack[] ="Hello World, this is Clement";
+const char haystack[] ="Hello Wor, this World Clement";
 const char needle[] = "World";
-size_t len = 5;
+size_t len = 25;
 char *result;
 
 result = ft_strnstr(haystack, needle, len);
@@ -24,23 +24,29 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 size_t i;
 size_t j;
-i = 0;
-j = 0;
+size_t ln;
 char *ph;
 char *pn;
+
+i = 0;
+j = 0;
 ph = (char*)haystack;
 pn = (char *)needle;
  if(pn[0] == '\0')
  return (ph);
+ while(pn[j] != '\0')
+ j++;
+ ln = j;
+ j = 0;
  while(ph[i] != '\0' && (i < len))
  {
 	while(ph[i] == pn[j])
 	{
 		i++;
 		j++;
-		if(pn[j] != '\0')
+		if(pn[j] == '\0')
 		{
-			return (&pn[i]);
+			return (&ph[i - ln]);
 		}
 	}
 	if(ph[i] != pn[j])
