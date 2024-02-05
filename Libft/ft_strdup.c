@@ -1,4 +1,5 @@
 #include <string.h>
+
 char	*ft_strdup(char *src)
 {
 	int		i;
@@ -6,8 +7,8 @@ char	*ft_strdup(char *src)
 	char	*dest;
 
 	j = 0;
-	if(src == NULL)
-	return (0);
+	if (src == NULL)
+		return (0);
 	while (src[j] != '\0')
 	{
 		j++;

@@ -1,17 +1,15 @@
-#include <stdio.h>
+int	ft_atoi(const char *str);
 
-int ft_atoi(const char *str);
-
-int main(void)
+/* int	main(void)
 {
-	char str[] = "    	 ----++154510148657847465467864565646549qaad45445125";
+	char	str[] = "    	 ----++154510565646549qaad45445125";
 	int result;
 	printf("la vieille chaine en char est %s\n", str);
 	printf("=========================\n");
 	result = ft_atoi(str);
 	printf("la nouvelle chaine en int est %d\n", result);
 	return (0);
-}
+} */
 
 int	ft_atoi(const char *str)
 {

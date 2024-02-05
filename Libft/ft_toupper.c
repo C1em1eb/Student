@@ -1,7 +1,6 @@
-
 #include <unistd.h>
 
-int ft_toupper(int c);
+int	ft_toupper(int c);
 
 /* int main(void)
 {
@@ -12,10 +11,10 @@ int ft_toupper(int c);
 	write(1, "\n", 1);
 }
  */
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
-if(c >= 'a' && c <= 'z')
-	return (c = c - 32);
-else
-	return (c);
+	if (c >= 'a' && c <= 'z')
+		return (c = c - 32);
+	else
+		return (c);
 }
