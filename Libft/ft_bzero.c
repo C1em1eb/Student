@@ -1,6 +1,6 @@
 #include <strings.h>
 
-void	bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 unsigned char	*p;
 size_t	i;
