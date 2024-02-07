@@ -1,18 +1,27 @@
-NAME = Libft
+SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
+		ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c ft_strchr.c ft_strdup.c ft_strlcat.c \
+			ft_strlcpy.c ft_strlen.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_tolower.c ft_toupper.c
 
-$(NAME)
-	@cc -Wall -Wextra -Werror main.c -0 $(NAME)
+OBJS := $(SRC:%.c=%.o)
 
-bonus:
+NAME = Libft.a
 
-all:
+CC = cc
+
+CCFLAGS = -Wall -Wextra -Werror
+
+all = $(NAME)
+
+$(NAME) : $(OBJS)
+
+%.o: %.c
+ 	$(CC) $(CCFLAGS) -o $@ -c $<
 
 clean:
+	rm -f $(OBJS)
 
-	@find . -name $(NAME) - delete
+fclean: clean
+	rm -f $(NAME)
 
-fclean:
-
-re:
-
+re: fclean all
 
