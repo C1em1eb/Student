@@ -10,12 +10,13 @@ CC = cc
 
 CCFLAGS = -Wall -Wextra -Werror
 
-all = $(NAME)
+all: $(NAME)
 
 $(NAME) : $(OBJS)
+	ar rcs $(NAME) $(OBJS)
 
 %.o: %.c
- 	$(CC) $(CCFLAGS) -o $@ -c $<
+	$(CC) $(CCFLAGS) -o $@ -c $<
 
 clean:
 	rm -f $(OBJS)
