@@ -1,21 +1,5 @@
 #include "libft.h"
-/*
-size_t ft_strlcat(char	*dst, const char	*src, size_t	dstsize);
 
-int main(void)
-{
-const char source[] = "hello";
-char destination[] = "hello";
-size_t size = 2;
-size_t result = 0;
-//size_t oresult = 0;
-
-result = ft_strlcat(destination, source, size);
-//result = strlcat(destination, source, size);
-printf("My the length of the concatenate string is %li\n", result);
-//printf("OG length of the concatenate string is %li\n", oresult);
-}
-*/
 size_t	ft_strlcat(char	*dst, const char	*src, size_t	dstsize)
 {
 	size_t				ls;
