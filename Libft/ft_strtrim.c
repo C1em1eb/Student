@@ -1,19 +1,5 @@
 #include "libft.h"
 
-char *ft_strtrim(char const *s1, char const *set);
-
-int main(void)
-{
-char s[] = "abbbbbbbbbbbaaaMy name is Clementabbbbbbbbbbbaaab";
-char set[] = "ba";
-
-char *result;
-result = ft_strtrim(s, set);
-printf("the trimed string is ""%s""\n", result);
-free (result);
-return (0);
-}
-
 char *ft_strtrim(char const *s1, char const *set)
 {
 	char	*strim;
@@ -35,9 +21,6 @@ char *ft_strtrim(char const *s1, char const *set)
 	if (strim == NULL)
 		return (NULL);
 	ft_strlcpy(strim, &s1[start], strimlen);
+	strim[strimlen] = '\0';
 	return (strim);
 }
-
-
-
-

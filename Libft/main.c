@@ -2,16 +2,16 @@
 
 // int	ft_atoi(const char *str)
 
-int	main(void)
+/* int	main(void)
 {
-	char	str[] = "    	 ---++15465494648646666666666666666666666666654555qaad4525";
+	char	str[] = "    	 ---++15465494648646666666666666654555qaad4525";
 	int result;
 	printf("la vieille chaine en char est %s\n", str);
 	printf("=========================\n");
 	result = ft_atoi(str);
 	printf("la nouvelle chaine en int est %d\n", result);
 	return (0);
-}
+} */
 
 /////////////////////////////////////////////////////////////////////
 
@@ -167,7 +167,7 @@ return (0);
 
 // char *ft_strtrim(char const *s1, char const *set)
 
-/* int main(void)
+int main(void)
 {
 char s[] = "abbbbbbbbbbbaaaMy name is Clementabbbbbbbbbbbaaab";
 char set[] = "ba";
@@ -178,7 +178,7 @@ printf("the trimed string is ""%s""\n", result);
 free (result);
 return (0);
 }
- */
+
 
 /////////////////////////////////////////////////////////////////////
 
