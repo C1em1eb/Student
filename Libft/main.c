@@ -1,6 +1,6 @@
 #include "libft.h"
 
-// ft_atoi.c
+// int	ft_atoi(const char *str)
 
 int	main(void)
 {
@@ -15,7 +15,7 @@ int	main(void)
 
 /////////////////////////////////////////////////////////////////////
 
-// ft_memchr.c
+// void	*ft_memchr(const void	*s, int c, size_t	n)
 
 /* int	main(void)
 {
@@ -38,7 +38,7 @@ int	main(void)
 
 /////////////////////////////////////////////////////////////////////
 
-// ft_strchrc.c
+// char	*ft_strchr(const char *s, int c)
 
 /*int main(void)
 {
@@ -62,7 +62,7 @@ return (0);
 
 /////////////////////////////////////////////////////////////////////
 
-//ft_strjoin.c
+// char	*ft_strjoin(char const	*s1, char const	*s2)
 
 /* int main(void)
 {
@@ -78,7 +78,7 @@ return (0);
 
 /////////////////////////////////////////////////////////////////////
 
-//ft_strlcat.c
+// size_t	ft_strlcat(char	*dst, const char	*src, size_t	dstsize)
 
 /*int main(void)
 {
@@ -97,7 +97,7 @@ printf("My the length of the concatenate string is %li\n", result);
 
 /////////////////////////////////////////////////////////////////////
 
-//ft_strncmp.c
+// int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 /*int	main(void)
 {
@@ -120,7 +120,7 @@ printf("My the length of the concatenate string is %li\n", result);
 
 /////////////////////////////////////////////////////////////////////
 
-//ft_strnstr.c
+// char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 /* int main(void)
 {
@@ -141,7 +141,7 @@ return (0);
 
 /////////////////////////////////////////////////////////////////////
 
-//ft_strrchr.c
+// char	*ft_strrchr(const char	*s, int c)
 
 /*int main(void)
 {
@@ -165,7 +165,7 @@ return (0);
 
 /////////////////////////////////////////////////////////////////////
 
-// ft_strtrim.c
+// char *ft_strtrim(char const *s1, char const *set)
 
 /* int main(void)
 {
@@ -182,7 +182,7 @@ return (0);
 
 /////////////////////////////////////////////////////////////////////
 
-//ft_substr.c
+// char	*ft_substr(char const	*s, unsigned int	start, size_t	len)
 
 /* int main(void)
 {
