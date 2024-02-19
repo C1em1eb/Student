@@ -6,7 +6,7 @@
 /*   By: cleblond <cleblond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 16:06:22 by cleblond          #+#    #+#             */
-/*   Updated: 2024/02/19 16:06:23 by cleblond         ###   ########.fr       */
+/*   Updated: 2024/02/19 16:09:23 by cleblond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -182,7 +182,7 @@ return (0);
 int main(void)
 {
 char s[] = "abbbbbbbbbbbaaaMy name is Clementabbbbbbbbbbbaaab";
-char set[] = "ba";
+char set[] = "bafwef";
 
 char *result;
 result = ft_strtrim(s, set);

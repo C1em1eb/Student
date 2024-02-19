@@ -6,7 +6,7 @@
 /*   By: cleblond <cleblond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 16:05:00 by cleblond          #+#    #+#             */
-/*   Updated: 2024/02/19 16:05:02 by cleblond         ###   ########.fr       */
+/*   Updated: 2024/02/19 16:17:10 by cleblond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 
 char	**ft_split(char const *s, char c);
 static int ft_wordcounter(char const *s, char c);
+
+hello world
+s[0][0] h
+hello
+world
 
 /*
 ["S", "a", "l", "t", ",", " "],

@@ -6,9 +6,70 @@
 /*   By: cleblond <cleblond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 16:03:44 by cleblond          #+#    #+#             */
-/*   Updated: 2024/02/19 16:07:02 by cleblond         ###   ########.fr       */
+/*   Updated: 2024/02/19 18:45:02 by cleblond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	ft_nlength(int n);
+char	*ft_itoa(int n);
+
+int main(void)
+{
+	int n = 0;
+	char *result;
+	result = ft_itoa(n);
+	printf("%s", result);
+	free (result);
+	return (0);
+}
+
+static int	ft_nlength(int n)
+{
+	int	nlength;
+	int sign;
+
+	if (!n)
+		return (0);
+
+	if (n >= 0)
+		sign = 0;
+	else
+		sign = 1;
+
+	nlength = 0;
+	while (n != 0)
+	{
+		n = n / 10;
+		nlength++;
+	}
+	return (nlength + sign);
+}
+
+char	*ft_itoa(int n)
+{
+	char *s;
+	int i;
+	int nlength;
+
+	nlength = ft_nlength(n);
+
+	s = (char *)malloc(sizeof(char) * (nlength + 1));
+	if (s == NULL)
+		return (0);
+	if (n < 0)
+	{
+		s[0] = '-';
+		n = n * -1;
+	}
+	i = nlength - 1;
+	while (i >= 0)
+	{
+		s[i] = n % 10 + '0';
+		n = n / 10;
+		i--;
+	}
+	s[nlength] = '\0';
+	return (s);
+}
