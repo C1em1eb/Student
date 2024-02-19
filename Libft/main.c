@@ -109,6 +109,32 @@ printf("My the length of the concatenate string is %li\n", result);
 
 /////////////////////////////////////////////////////////////////////
 
+// char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+
+/*static char ft_upper(unsigned int i, char c);
+
+int	main(void)
+{
+char s[] = "hello";
+char *result;
+
+printf("the old string is %s\n", s);
+result = ft_strmapi(s, ft_upper);
+printf("the new string is %s\n", result);
+return (0);
+}
+
+static char ft_upper(unsigned int i, char c)
+{
+	(void)i;
+	if (c >= 'a' && c <= 'z')
+		return c - 'a' + 'A';
+	else
+	return c;
+} */
+
+/////////////////////////////////////////////////////////////////////
+
 // int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 /*int	main(void)
