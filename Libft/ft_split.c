@@ -12,7 +12,6 @@
 
 #include "libft.h"
 
-char	**ft_split(char const *s, char c);
 static int ft_wordcounter(char const *s, char c);
 static void ft_print_two_dimensions_array(char **s);
 static void	ft_putstr(char *str);
@@ -20,8 +19,8 @@ static void	ft_putstr(char *str);
 int main(void)
 {
 	//char *test[] = {"Helloclement", "Worldzzzzzzzzzzzfzefzefzzzzza", "Salut", "Encore", "Bravoooooooooooooooo", NULL};
-	char	s[] = "Hello World";
-	char	c = ' ';
+	char	s[] = "a?a";
+	char	c = 'a';
 	char	**result;
 
 	result = ft_split(s, c);
@@ -52,12 +51,12 @@ static int ft_wordcounter(char const *s, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	int		wordcount;
-	char	**split;
-	int		i;
-	int		start;
-	int		row;
-	size_t	len;
+	int				wordcount;
+	char			**split;
+	int				i;
+	unsigned int	start;
+	int				row;
+	size_t			len;
 
 	if (s == NULL)
 		return (NULL);
@@ -121,5 +120,5 @@ static void	ft_putstr(char *str)
 		write(1, &str[i], 1);
 		i++;
 	}
-	write(1, "\0", 1);
+	write(1, "\n", 1);
 }
