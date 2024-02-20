@@ -1,16 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_wordcounter.c                                   :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: cleblond <cleblond@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/19 16:06:10 by cleblond          #+#    #+#             */
-/*   Updated: 2024/02/19 16:06:12 by cleblond         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "libft.h"
+/* #include "libft.h"
 
 static int ft_wordcounter(char const *s, char c);
 
@@ -42,4 +30,4 @@ static int ft_wordcounter(char const *s, char c)
 		i++;
 	}
 	return (wordcounter);
-}
+} */
