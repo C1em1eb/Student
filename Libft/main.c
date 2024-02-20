@@ -27,6 +27,26 @@
 
 /////////////////////////////////////////////////////////////////////
 
+// char		*ft_itoa(int n);
+
+/* static int	ft_nlength(int n);
+static void	ft_fillchars(char *s, int n, int nlength, int sign);
+
+int	main(void)
+{
+	int		n;
+	char	*result;
+
+	n = 1;
+	result = ft_itoa(n);
+	printf("%s\n", result);
+	free (result);
+	return (0);
+} */
+
+/////////////////////////////////////////////////////////////////////
+
+
 // void	*ft_memchr(const void	*s, int c, size_t	n)
 
 /* int	main(void)
