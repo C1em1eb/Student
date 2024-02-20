@@ -12,32 +12,23 @@
 
 #include "libft.h"
 
-char	**ft_split(char const *s, char c);
-static int ft_wordcounter(char const *s, char c);
-
-hello world
-s[0][0] h
-hello
-world
-
-/*
-["S", "a", "l", "t", ",", " "],
-["C", "l", "e", "m", "e", "n"]
- */
+/* char	**ft_split(char const *s, char c);
+static int ft_wordcounter(char const *s, char c); */
 
 int main(void)
 {
-	char 	s[] = "Hello World";
-	char 	**result = NULL;
+	//char 	s[] = "Hello World";
+	char *test[] = {"Hello", "World", NULL};
+	//char 	**result = NULL;
 	int i = 0;
-	result = ft_split(s, ' ');
+	//result = ft_split(s, ' ');
 
-	while (i < 6)
+	while (i < ft_strlen(test))
 	{
 		int j = 0;
-		while (j < 3)
+		while (j < NULL));
 		{
-			printf("%c", result[i][j]);
+			printf("%c", test[i][j]);
 			j++;
 		}
 	printf("\n");
@@ -45,7 +36,7 @@ int main(void)
 	}
 	return (0);
 }
-
+/*
 static int ft_wordcounter(char const *s, char c)
 {
 	int i;
@@ -99,3 +90,4 @@ char	**ft_split(char const *s, char c)
 	split[j] = NULL;
 	return (split);
 }
+ */
