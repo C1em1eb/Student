@@ -46,7 +46,6 @@ int	main(void)
 
 /////////////////////////////////////////////////////////////////////
 
-
 // void	*ft_memchr(const void	*s, int c, size_t	n)
 
 /* int	main(void)
@@ -199,6 +198,61 @@ return (0);
 
 /////////////////////////////////////////////////////////////////////
 
+
+static void	ft_print_two_dimensions_array(char **s);
+static void	ft_putstr(char *str);
+
+int	main(void)
+{
+	char	s[] = "aSalut Je M'appelle Clément  et   toi?";
+	char	c = ' ';
+	char	**result;
+
+	result = ft_split(s, c);
+	ft_putstr(s);
+	ft_print_two_dimensions_array(result);
+	free (result);
+	return (0);
+}
+
+static void	ft_print_two_dimensions_array(char **s)
+{
+	int	i;
+	int	j;
+	int	row;
+
+	row = 0;
+	i = 0;
+	while (s[row] != NULL)
+		row++;
+	while (i < row)
+	{
+		j = 0;
+		while (s[i][j] != '\0')
+		{
+			printf("%c", s[i][j]);
+			j++;
+		}
+		printf("\n");
+		i++;
+	}
+}
+
+static void	ft_putstr(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+	write(1, "\n", 1);
+}
+
+/////////////////////////////////////////////////////////////////////
+
 // char	*ft_strrchr(const char	*s, int c)
 
 /*int main(void)
@@ -225,7 +279,7 @@ return (0);
 
 // char *ft_strtrim(char const *s1, char const *set)
 
-int main(void)
+/* int main(void)
 {
 char s[] = "abbbbbbbbbbbaaaMy name is Clementabbbbbbbbbbbaaab";
 char set[] = "bafwef";
@@ -236,7 +290,7 @@ printf("the trimed string is ""%s""\n", result);
 free (result);
 return (0);
 }
-
+ */
 
 /////////////////////////////////////////////////////////////////////
 
@@ -282,3 +336,20 @@ return (0);
 	write(1, "\n", 1);
 }
  */
+
+/////////////////////////////////////////////////////////////////////
+
+/* static int ft_wordcounter(char const *s, char c);
+
+int main(void)
+{
+	char s[] = "Salut    t    je    m'apelle       Clement       ";
+	char c = ' ';
+	int result;
+
+	result = ft_wordcounter(s, c);
+	printf("le nombre de mots dans la chaine est %d\n", result);
+	return (0);
+} */
+
+/////////////////////////////////////////////////////////////////////

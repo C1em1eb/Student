@@ -12,28 +12,28 @@
 
 #include "libft.h"
 
-static int ft_wordcounter(char const *s, char c);
-static void ft_print_two_dimensions_array(char **s);
-static void	ft_putstr(char *str);
+static int	ft_wordcounter(char const *s, char c);
+static char	**ft_exctract(char const *s, char **split, char c, int wordcount);
 
-int main(void)
+char	**ft_split(char const *s, char c)
 {
-	//char *test[] = {"Helloclement", "Worldzzzzzzzzzzzfzefzefzzzzza", "Salut", "Encore", "Bravoooooooooooooooo", NULL};
-	char	s[] = "a?a";
-	char	c = 'a';
-	char	**result;
+	int		wordcount;
+	char	**split;
 
-	result = ft_split(s, c);
-	ft_putstr(s);
-	ft_print_two_dimensions_array(result);
-	free (result);
-	return (0);
+	if (s == NULL)
+		return (NULL);
+	wordcount = ft_wordcounter(s, c);
+	split = (char **)malloc(sizeof(char *) * (wordcount + 1));
+	if (split == NULL)
+		return (NULL);
+	split = ft_exctract(s, split, c, wordcount);
+	return (split);
 }
 
-static int ft_wordcounter(char const *s, char c)
+static int	ft_wordcounter(char const *s, char c)
 {
-	int i;
-	int wordcounter;
+	int	i;
+	int	wordcounter;
 
 	i = 0;
 	wordcounter = 0;
@@ -49,21 +49,13 @@ static int ft_wordcounter(char const *s, char c)
 	return (wordcounter);
 }
 
-char	**ft_split(char const *s, char c)
+static char	**ft_exctract(char const *s, char **split, char c, int wordcount)
 {
-	int				wordcount;
-	char			**split;
 	int				i;
 	unsigned int	start;
 	int				row;
 	size_t			len;
 
-	if (s == NULL)
-		return (NULL);
-	wordcount = ft_wordcounter(s, c);
-	split = (char **)malloc(sizeof(char *) * (wordcount + 1));
-	if (split == NULL)
-		return (NULL);
 	i = 0;
 	row = 0;
 	while (s[i] != '\0' && row < wordcount)
@@ -77,48 +69,9 @@ char	**ft_split(char const *s, char c)
 			split[row] = ft_substr(s, start, len);
 			row++;
 		}
-		else if (s[i] == c)
-		{
-			while (s[i] == c && s[i])
+		while (s[i] == c && s[i])
 			i++;
-		}
 	}
 	split[row] = NULL;
 	return (split);
-}
-
-static void ft_print_two_dimensions_array(char **s)
-{
-	int i;
-	int j;
-	int row;
-
-	row = 0;
-	i = 0;
-	while (s[row] != NULL)
-		row++;
-	while (i < row)
-	{
-		j = 0;
-		while (s[i][j] != '\0')
-		{
-			printf("%c", s[i][j]);
-			j++;
-		}
-		printf("\n");
-		i++;
-	}
-}
-
-static void	ft_putstr(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		write(1, &str[i], 1);
-		i++;
-	}
-	write(1, "\n", 1);
 }
