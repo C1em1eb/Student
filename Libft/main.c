@@ -6,7 +6,7 @@
 /*   By: cleblond <cleblond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 16:06:22 by cleblond          #+#    #+#             */
-/*   Updated: 2024/02/19 16:09:23 by cleblond         ###   ########.fr       */
+/*   Updated: 2024/02/21 15:03:27 by cleblond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -198,8 +198,9 @@ return (0);
 
 /////////////////////////////////////////////////////////////////////
 
+// char	**ft_split(char const *s, char c)
 
-static void	ft_print_two_dimensions_array(char **s);
+/* static void	ft_print_two_dimensions_array(char **s);
 static void	ft_putstr(char *str);
 
 int	main(void)
@@ -249,31 +250,31 @@ static void	ft_putstr(char *str)
 		i++;
 	}
 	write(1, "\n", 1);
-}
+} */
 
 /////////////////////////////////////////////////////////////////////
 
 // char	*ft_strrchr(const char	*s, int c)
 
-/*int main(void)
+int	main(void)
 {
-const char s[] = "Hello";
-int c = 'l';
-char *result;
+	const char	s[] = "Hellco";
+	int			c = 'c';
+	char		*result;
 
-result = ft_strrchr(s, c);
-if (result != NULL)
-{
-	printf("the adress of the pointer is %p\n", result);
-	printf("the string of the pointer is %s\n", result);
-	printf("the specific character of the pointer is %c\n", *result);
+	result = ft_strrchr(s, c);
+	if (result != NULL)
+	{
+		printf("the adress of the pointer is %p\n", result);
+		printf("the string of the pointer is %s\n", result);
+		printf("the specific character of the pointer is %c\n", *result);
+	}
+	else
+	{
+		printf("Character not found\n");
+	}
+	return (0);
 }
-else
-{
-    printf("Character not found\n");
-}
-return (0);
-} */
 
 /////////////////////////////////////////////////////////////////////
 
