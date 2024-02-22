@@ -10,10 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_lstadd_front(t_list **lst, t_list *new)
-{
-	if (new != NULL)
-	new->next = *lst;
-	*lst = new;
-}
+#include "libft.h"
 
+int ft_lstsize(t_list *lst)
+{
+	int i;
+
+	i = 0;
+	while (lst != NULL)
+	{
+		i++;
+		lst = next->lst;
+	}
+	return (i);
+}
