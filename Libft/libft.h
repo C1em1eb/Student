@@ -6,7 +6,7 @@
 /*   By: cleblond <cleblond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 16:06:17 by cleblond          #+#    #+#             */
-/*   Updated: 2024/02/21 15:21:15 by cleblond         ###   ########.fr       */
+/*   Updated: 2024/02/26 17:47:56 by cleblond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strjoin(char const	*s1, char const	*s2);
 size_t	ft_strlcat(char	*dst, const char	*src, size_t	dstsize);
 size_t	ft_strlcpy(char	*dst, const char	*src, size_t	dstsize);
-int		ft_strlen(char	*s);
+size_t	ft_strlen(const char *s);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int		ft_strncmp(const char	*s1, const char	*s2, size_t	n);
 char	*ft_strnstr(const char	*haystack, const char	*needle, size_t	len);

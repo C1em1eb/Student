@@ -6,7 +6,7 @@
 /*   By: cleblond <cleblond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 16:06:22 by cleblond          #+#    #+#             */
-/*   Updated: 2024/02/21 15:03:27 by cleblond         ###   ########.fr       */
+/*   Updated: 2024/02/26 17:34:46 by cleblond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -200,12 +200,12 @@ return (0);
 
 // char	**ft_split(char const *s, char c)
 
-/* static void	ft_print_two_dimensions_array(char **s);
+static void	ft_print_two_dimensions_array(char **s);
 static void	ft_putstr(char *str);
 
 int	main(void)
 {
-	char	s[] = "aSalut Je M'appelle Clément  et   toi?";
+	char	s[] = " aSalut Je M'appelle Clément  et   toi?";
 	char	c = ' ';
 	char	**result;
 
@@ -250,13 +250,13 @@ static void	ft_putstr(char *str)
 		i++;
 	}
 	write(1, "\n", 1);
-} */
+}
 
 /////////////////////////////////////////////////////////////////////
 
 // char	*ft_strrchr(const char	*s, int c)
 
-int	main(void)
+/* int	main(void)
 {
 	const char	s[] = "Hellco";
 	int			c = 'c';
@@ -275,7 +275,7 @@ int	main(void)
 	}
 	return (0);
 }
-
+ */
 /////////////////////////////////////////////////////////////////////
 
 // char *ft_strtrim(char const *s1, char const *set)
