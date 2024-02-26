@@ -21,6 +21,9 @@ CCFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
+bonus: $(OBJS) $(OBJSBONUS)
+	ar rcs $(NAME) $(OBJS) $(OBJSBONUS)
+
 $(NAME) : $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
@@ -28,7 +31,7 @@ $(NAME) : $(OBJS)
 	$(CC) $(CCFLAGS) -o $@ -c $<
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(OBJSBONUS)
 
 fclean: clean
 	rm -f $(NAME)

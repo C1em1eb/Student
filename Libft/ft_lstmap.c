@@ -1,4 +1,16 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cleblond <cleblond@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/26 18:56:09 by cleblond          #+#    #+#             */
+/*   Updated: 2024/02/26 18:58:22 by cleblond         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/* #include "libft.h"
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
@@ -6,3 +18,4 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 return (lst);
 }
+ */
