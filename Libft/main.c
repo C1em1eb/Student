@@ -6,7 +6,7 @@
 /*   By: cleblond <cleblond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 16:06:22 by cleblond          #+#    #+#             */
-/*   Updated: 2024/02/26 17:34:46 by cleblond         ###   ########.fr       */
+/*   Updated: 2024/02/26 19:01:54 by cleblond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -200,7 +200,7 @@ return (0);
 
 // char	**ft_split(char const *s, char c)
 
-static void	ft_print_two_dimensions_array(char **s);
+/* static void	ft_print_two_dimensions_array(char **s);
 static void	ft_putstr(char *str);
 
 int	main(void)
@@ -251,7 +251,7 @@ static void	ft_putstr(char *str)
 	}
 	write(1, "\n", 1);
 }
-
+ */
 /////////////////////////////////////////////////////////////////////
 
 // char	*ft_strrchr(const char	*s, int c)
