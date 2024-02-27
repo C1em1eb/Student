@@ -6,7 +6,7 @@
 /*   By: cleblond <cleblond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 18:04:04 by cleblond          #+#    #+#             */
-/*   Updated: 2024/02/27 17:38:42 by cleblond         ###   ########.fr       */
+/*   Updated: 2024/02/27 18:55:26 by cleblond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_lstsize(t_list *lst)
 	while (lst != NULL)
 	{
 		i++;
-		lst = lst->next; // lst points now to the next ndoe
+		lst = lst->next;
 	}
 	return (i);
 }
