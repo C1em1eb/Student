@@ -6,7 +6,7 @@
 /*   By: cleblond <cleblond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 16:05:24 by cleblond          #+#    #+#             */
-/*   Updated: 2024/02/19 16:05:25 by cleblond         ###   ########.fr       */
+/*   Updated: 2024/02/28 14:58:14 by cleblond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,11 @@ size_t	ft_strlcpy(char	*dst, const char	*src, size_t	dstsize)
 		l++;
 	if (dstsize == 0)
 		return (l);
-	else
+	while (i < (dstsize - 1) && s[i] != '\0')
 	{
-		while (i < dstsize && s[i] != '\0')
-		{
-			d[i] = s[i];
-			i++;
-		}
-		d[i] = '\0';
-		return (l);
+		d[i] = s[i];
+		i++;
 	}
+	d[i] = '\0';
+	return (l);
 }

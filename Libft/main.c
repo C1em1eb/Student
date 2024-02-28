@@ -6,7 +6,7 @@
 /*   By: cleblond <cleblond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 16:06:22 by cleblond          #+#    #+#             */
-/*   Updated: 2024/02/26 19:01:54 by cleblond         ###   ########.fr       */
+/*   Updated: 2024/02/28 14:14:34 by cleblond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,22 +109,22 @@ return (0);
 
 /////////////////////////////////////////////////////////////////////
 
-// size_t	ft_strlcat(char	*dst, const char	*src, size_t	dstsize)
+// size_t	ft_strlcat(char	*dst, const char	*src, size_t	size)
+#include "libft.h"
 
-/*int main(void)
+int main(void)
 {
-const char source[] = "hello";
+const char source[] = " world";
 char destination[] = "hello";
-size_t size = 2;
+size_t size = 0;
 size_t result = 0;
-//size_t oresult = 0;
+size_t oresult = 0;
 
 result = ft_strlcat(destination, source, size);
-//result = strlcat(destination, source, size);
-printf("My the length of the concatenate string is %li\n", result);
-//printf("OG length of the concatenate string is %li\n", oresult);
+oresult = strlcat(destination, source, size);
+printf("The length of the concatenate string is %li\n", result);
+printf("OG length of the concatenate string is %li\n", oresult);
 }
-*/
 
 /////////////////////////////////////////////////////////////////////
 

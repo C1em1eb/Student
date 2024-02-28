@@ -6,7 +6,7 @@
 /*   By: cleblond <cleblond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 16:05:44 by cleblond          #+#    #+#             */
-/*   Updated: 2024/02/19 16:05:45 by cleblond         ###   ########.fr       */
+/*   Updated: 2024/02/28 15:14:57 by cleblond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,15 @@ char	*ft_strrchr(const char	*s, int c)
 {
 	int		i;
 	char	*p;
+	int		len;
 
 	i = 0;
 	p = (char *) s;
+	if (c == '\0')
+	{
+		len = ft_strlen(p);
+		return (&p[len]);
+	}
 	while (p[i] != '\0')
 	{
 		i++;
