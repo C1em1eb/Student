@@ -30,7 +30,7 @@
 
 // char		*ft_itoa(int n);
 
-int	main(void)
+/* int	main(void)
 {
 	int		n;
 	char	*result;
@@ -41,7 +41,7 @@ int	main(void)
 	free (result);
 	return (0);
 }
-
+ */
 /////////////////////////////////////////////////////////////////////
 
 // void	*ft_memchr(const void	*s, int c, size_t	n)
@@ -295,18 +295,18 @@ return (0);
 
 // char	*ft_substr(char const	*s, unsigned int	start, size_t	len)
 
-/* int main(void)
+int main(void)
 {
-	char const s[] = "Bonjour, comment ça va?";
-	unsigned int start = 21;
-	size_t len = 3;
+	char const s[] = "lorem ipsum dolor sit amet";
+	unsigned int start = 400;
+	size_t len = 20;
 	char *result = NULL;
 
 	result = ft_substr(s, start, len);
 	printf("The substring is %s\n", result);
 	free (result);
 	return (0);
-} */
+}
 
 /////////////////////////////////////////////////////////////////////
 
