@@ -12,52 +12,32 @@
 
 #include "libft.h"
 
-static int	ft_nlength(int n);
-static void	ft_fillchars(char *s, int n, int nlength, int sign);
-
-/* char		*ft_itoa(int n);
-
-int	main(void)
+static unsigned int	ft_nlength(int n)
 {
-	int		n;
-	char	*result;
+	unsigned int	nlength;
 
-	n = 1;
-	result = ft_itoa(n);
-	printf("%s\n", result);
-	free (result);
-	return (0);
-} */
-
-static int	ft_nlength(int n)
-{
-	int	nlength;
-	int	sign;
-
-	if (!n)
-		return (0);
-	if (n >= 0)
-		sign = 0;
-	else
-		sign = 1;
 	nlength = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
+		nlength = 1;
 	while (n != 0)
 	{
 		n = n / 10;
 		nlength++;
 	}
-	return (nlength + sign);
+	return (nlength);
 }
 
-static void	ft_fillchars(char *s, int n, int nlength, int sign)
+static void	ft_fillchars(char *s, unsigned int number, unsigned int nlength)
 {
 	int	i;
 
 	i = nlength - 1;
-	while (i >= 0 + sign)
+	while (number != 0)
 	{
-		s[i] = n % 10 + '0';
-		n = n / 10;
+		s[i] = number % 10 + '0';
+		number = number / 10;
 		i--;
 	}
 	s[nlength] = '\0';
@@ -65,12 +45,12 @@ static void	ft_fillchars(char *s, int n, int nlength, int sign)
 
 char	*ft_itoa(int n)
 {
-	char	*s;
-	int		nlength;
-	int		sign;
+	char			*s;
+	unsigned int	nlength;
+	unsigned int	number;
 
-	sign = 0;
 	nlength = ft_nlength(n);
+	number = n;
 	s = (char *)malloc(sizeof(char) * (nlength + 1));
 	if (s == NULL)
 		return (NULL);
@@ -78,14 +58,12 @@ char	*ft_itoa(int n)
 	{
 		s[0] = '0';
 		s[1] = '\0';
-		return (s);
 	}
 	if (n < 0)
 	{
-		sign = 1;
 		s[0] = '-';
-		n = -n;
+		number = -number;
 	}
-	ft_fillchars(s, n, nlength, sign);
+	ft_fillchars(s, number, nlength);
 	return (s);
 }

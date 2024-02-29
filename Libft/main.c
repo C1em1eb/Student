@@ -14,7 +14,7 @@
 
 // int	ft_atoi(const char *str)
 
-int	main(void)
+/* int	main(void)
 {
 	char	str[] = "+-54";
 	int result;
@@ -24,26 +24,23 @@ int	main(void)
 	result = ft_atoi(str);
 	printf("la nouvelle chaine en int est %d\n", result);
 	return (0);
-}
+} */
 
 /////////////////////////////////////////////////////////////////////
 
 // char		*ft_itoa(int n);
-
-/* static int	ft_nlength(int n);
-static void	ft_fillchars(char *s, int n, int nlength, int sign);
 
 int	main(void)
 {
 	int		n;
 	char	*result;
 
-	n = 1;
+	n = -2147483648;
 	result = ft_itoa(n);
 	printf("%s\n", result);
 	free (result);
 	return (0);
-} */
+}
 
 /////////////////////////////////////////////////////////////////////
 
