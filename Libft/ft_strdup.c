@@ -20,7 +20,7 @@ char	*ft_strdup(char *src)
 
 	j = 0;
 	if (src == NULL)
-		return (0);
+		return (NULL);
 	while (src[j] != '\0')
 	{
 		j++;

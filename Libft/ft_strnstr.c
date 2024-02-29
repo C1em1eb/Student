@@ -20,19 +20,19 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 	i = 0;
 	j = 0;
-	if (*needle == '\0' || *haystack == *needle || needle == NULL)
-		return ((char *)(haystack));
 	ln = ft_strlen(needle) - 1;
-	while (haystack[i] && i < len && needle[j])
+	if (needle == NULL || *needle == '\0' || len == 0)
+		return ((char *)(haystack));
+	while (haystack[i] != '\0' && i < len)
 	{
+		j = 0;
 		while (haystack[i] == needle[j] && i < len)
 		{
 			i++;
 			j++;
-			if (needle[j] == '\0')
+			if (needle[j] == '\0' && i - j < len)
 				return ((char *)(&haystack[i - ln]));
 		}
-		j = 0;
 		i++;
 	}
 	return (NULL);

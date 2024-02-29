@@ -14,16 +14,17 @@
 
 // int	ft_atoi(const char *str)
 
-/* int	main(void)
+int	main(void)
 {
-	char	str[] = "    	 ---++15465494648646666666666666654555qaad4525";
+	char	str[] = "+-54";
 	int result;
 	printf("la vieille chaine en char est %s\n", str);
 	printf("=========================\n");
+	printf("la fonction originale renvoie %d\n", atoi(str));
 	result = ft_atoi(str);
 	printf("la nouvelle chaine en int est %d\n", result);
 	return (0);
-} */
+}
 
 /////////////////////////////////////////////////////////////////////
 
@@ -110,7 +111,7 @@ return (0);
 /////////////////////////////////////////////////////////////////////
 
 // size_t	ft_strlcat(char	*dst, const char	*src, size_t	size)
-#include "libft.h"
+/* #include "libft.h"
 
 int main(void)
 {
@@ -124,7 +125,7 @@ result = ft_strlcat(destination, source, size);
 oresult = strlcat(destination, source, size);
 printf("The length of the concatenate string is %li\n", result);
 printf("OG length of the concatenate string is %li\n", oresult);
-}
+} */
 
 /////////////////////////////////////////////////////////////////////
 
@@ -181,9 +182,9 @@ static char ft_upper(unsigned int i, char c)
 
 /* int main(void)
 {
-const char haystack[] ="Hello Wor, this World Clement";
-const char needle[] = "World";
-size_t len = 25;
+const char haystack[] ="lorem ipsum dolor sit amet";
+const char needle[] = "a";
+size_t len = 5;
 char *result;
 
 result = ft_strnstr(haystack, needle, len);
