@@ -15,22 +15,14 @@
 char	*ft_strdup(char *src)
 {
 	int		i;
-	int		j;
 	char	*dest;
 
-	j = 0;
+	i = 0;
 	if (src == NULL)
 		return (NULL);
-	while (src[j] != '\0')
-	{
-		j++;
-	}
-	dest = malloc((j + 1) * sizeof(char));
+	dest = malloc((ft_strlen(src) + 1) * sizeof(char));
 	if (dest == NULL)
-	{
-		exit (0);
-	}
-	i = 0;
+		return (NULL);
 	while (src[i] != '\0')
 	{
 		dest[i] = src[i];
