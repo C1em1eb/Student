@@ -32,7 +32,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	strim = (char *)malloc(sizeof(char) * (strimlen +1));
 	if (strim == NULL)
 		return (NULL);
-	ft_strlcpy(strim, &s1[start], strimlen);
+	ft_strlcpy(strim, &s1[start], strimlen + 1);
 	strim[strimlen] = '\0';
 	return (strim);
 }

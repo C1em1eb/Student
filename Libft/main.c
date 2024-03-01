@@ -95,16 +95,16 @@ return (0);
 
 /* int main(void)
 {
-	char s1[] = "Clement";
-	char s2[] = " Leblond";
+	char s1[] = "lorem ipsum";
+	char s2[] = " dolor sit amet";
 	char	*result;
 
 	result = ft_strjoin(s1, s2);
-	printf("The concatenate string is : ""%s""\n", result);
+	printf("The concatenate string is :%s\n", result);
 	free (result);
 	return (0);
-	} */
-
+	}
+ */
 /////////////////////////////////////////////////////////////////////
 
 // size_t	ft_strlcat(char	*dst, const char	*src, size_t	size)
@@ -179,9 +179,9 @@ static char ft_upper(unsigned int i, char c)
 
 /* int main(void)
 {
-const char haystack[] ="lorem ipsum dolor sit amet";
-const char needle[] = "a";
-size_t len = 5;
+const char haystack[] ="lorem ipsipsum dolor sit amet";
+const char needle[] = "ipsum";
+size_t len = 30;
 char *result;
 
 result = ft_strnstr(haystack, needle, len);
@@ -289,13 +289,13 @@ printf("the trimed string is ""%s""\n", result);
 free (result);
 return (0);
 }
- */
 
+ */
 /////////////////////////////////////////////////////////////////////
 
 // char	*ft_substr(char const	*s, unsigned int	start, size_t	len)
 
-int main(void)
+/* int main(void)
 {
 	char const s[] = "lorem ipsum dolor sit amet";
 	unsigned int start = 400;
@@ -307,7 +307,7 @@ int main(void)
 	free (result);
 	return (0);
 }
-
+ */
 /////////////////////////////////////////////////////////////////////
 
 // int ft_tolower(int c);
