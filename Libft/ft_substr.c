@@ -6,7 +6,7 @@
 /*   By: cleblond <cleblond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 16:05:54 by cleblond          #+#    #+#             */
-/*   Updated: 2024/03/06 16:25:43 by cleblond         ###   ########.fr       */
+/*   Updated: 2024/03/06 16:44:19 by cleblond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
 	char	*substr;
-	size_t 	slen;
+	size_t	slen;
 
 	slen = ft_strlen(s);
 	i = 0;
