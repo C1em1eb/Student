@@ -6,7 +6,7 @@
 /*   By: cleblond <cleblond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 16:04:03 by cleblond          #+#    #+#             */
-/*   Updated: 2024/02/19 16:04:04 by cleblond         ###   ########.fr       */
+/*   Updated: 2024/03/06 15:34:59 by cleblond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ void	*ft_calloc(size_t	nmemb, size_t	size)
 	tmp = NULL;
 	i = 0;
 	if (nmemb == 0 || size == 0)
-		return (0);
-	if (nmemb * size > 2147483648)
-		return (0);
+		return (malloc(0));
+	if (nmemb * size / size != nmemb)
+		return (NULL);
 	else
 	{
 		tmp = malloc(nmemb * size);
 		if (tmp == NULL)
-			return (0);
+			return (NULL);
 	}
 	while (i < (size * nmemb))
 	{

@@ -6,7 +6,7 @@
 /*   By: cleblond <cleblond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 16:05:44 by cleblond          #+#    #+#             */
-/*   Updated: 2024/02/28 15:14:57 by cleblond         ###   ########.fr       */
+/*   Updated: 2024/03/06 16:30:53 by cleblond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ char	*ft_strrchr(const char	*s, int c)
 	{
 		if (p[i] == c)
 			return (&p[i]);
-		else if (p[i] != c)
+		else
 			i--;
 	}
-	return (0);
+	return (NULL);
 }
