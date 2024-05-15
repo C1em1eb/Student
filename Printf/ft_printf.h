@@ -1,5 +1,5 @@
-#ifndef LIBFTPRINT_H
-# define LIBFTPRINT_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 #include "../Libft/libft.h"
 #include <stdarg.h>
