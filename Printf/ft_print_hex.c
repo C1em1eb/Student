@@ -16,20 +16,20 @@
  */
 int	ft_print_hex_low(unsigned int i, int len)
 {
-	unsigned int remainder;
-	int j;
-	unsigned char hex[10] = {'\0'};
+	unsigned int	remainder;
+	int				j;
+	unsigned char	hex[10] = {'\0'};
 
-	len = 0;
+	j = 0;
 	while (i > 0)
 	{
 		remainder = i % 16;
 		i = i / 16;
-		if(remainder > 9)
+		if (remainder > 9)
 			hex[j] = remainder + 87;
 		else
 			hex[j] = remainder + '0';
-		j ++;
+		j++;
 	}
 	//hex[j++] = '0';
 	//hex[j++] = 'x';
@@ -40,20 +40,20 @@ int	ft_print_hex_low(unsigned int i, int len)
 
 int	ft_print_hex_up(unsigned int i, int len)
 {
-	unsigned int remainder;
-	int j;
-	unsigned char hex[10] = {'\0'};
+	unsigned int	remainder;
+	int				j;
+	unsigned char	hex[10] = {'\0'};
 
 	j = 0;
 	while (i > 0)
 	{
 		remainder = i % 16;
 		i = i / 16;
-		if(remainder > 9)
+		if (remainder > 9)
 			hex[j] = remainder + 55;
 		else
 			hex[j] = remainder + '0';
-		j ++;
+		j++;
 	}
 	//hex[j++] = '0';
 	//hex[j++] = 'x';
@@ -64,8 +64,8 @@ int	ft_print_hex_up(unsigned int i, int len)
 
 void	ft_rev_int_tab(unsigned char *tab, int size)
 {
-	int	i;
-	int	j;
+	int				i;
+	int				j;
 	unsigned char	tmp;
 
 	i = 0;

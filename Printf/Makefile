@@ -1,4 +1,4 @@
-SRCS = ft_printf.c ft_printf_words.c ft_printf_numbers.c ft_print_hex.c
+SRCS = ft_printf.c ft_printf_words.c ft_printf_numbers.c ft_print_hex.c ft_print_pointer.c
 OBJS := $(SRCS:%.c=%.o)
 
 NAME = libftprintf.a
