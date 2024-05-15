@@ -11,7 +11,19 @@ int	ft_putnbr_len(int n, int len)
 	return (len);
 }
 
-int	ft_putnbr_unsigned_len(int n, int len)
+int	ft_putnbr_unsigned_len(unsigned int n, int len)
+{
+	char *tab;
+
+	tab = ft_uitoa(n);
+	len = len + ft_strlen(tab);
+	ft_putstr(tab);
+	free (tab);
+	return (len);
+}
+
+
+/* int	ft_putnbr_unsigned_len(int n, int len)
 {
 	char	number[11];
 	int		i;
@@ -68,3 +80,4 @@ void	ft_putstr(char *str)
 		i++;
 	}
 }
+ */
