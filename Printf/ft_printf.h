@@ -11,8 +11,10 @@ int	ft_putnbr_len(int n, int len);
 int	ft_putnbr_unsigned_len(int n, int len);
 int	ft_print_hex_low(unsigned int i, int len);
 int	ft_print_hex_up(unsigned int i, int len);
-void	ft_rev_int_tab(unsigned char *tab, int size);
-void	ft_putstr(unsigned char *str);
+void	ft_rev_char_tab(char *tab, int size);
+void	ft_putstr(char *str);
+void	ft_rev_unchar_tab(unsigned char *tab, int size);
+void	ft_putstr_unchar(unsigned char *str);
 int	ft_printf(const char *format, ...);
 
 #endif

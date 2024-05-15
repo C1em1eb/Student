@@ -33,8 +33,8 @@ int	ft_print_hex_low(unsigned int i, int len)
 	}
 	//hex[j++] = '0';
 	//hex[j++] = 'x';
-	ft_rev_int_tab (hex, j);
-	ft_putstr(hex);
+	ft_rev_unchar_tab(hex, j);
+	ft_putstr_unchar(hex);
 	return (len + j);
 }
 
@@ -57,12 +57,12 @@ int	ft_print_hex_up(unsigned int i, int len)
 	}
 	//hex[j++] = '0';
 	//hex[j++] = 'x';
-	ft_rev_int_tab (hex, j);
-	ft_putstr(hex);
+	ft_rev_unchar_tab (hex, j);
+	ft_putstr_unchar(hex);
 	return (len + j);
 }
 
-void	ft_rev_int_tab(unsigned char *tab, int size)
+void	ft_rev_unchar_tab(unsigned char *tab, int size)
 {
 	int				i;
 	int				j;
@@ -80,7 +80,7 @@ void	ft_rev_int_tab(unsigned char *tab, int size)
 	}
 }
 
-void	ft_putstr(unsigned char *str)
+void	ft_putstr_unchar(unsigned char *str)
 {
 	int	i;
 

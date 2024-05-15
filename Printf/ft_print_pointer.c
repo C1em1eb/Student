@@ -7,6 +7,11 @@ int	ft_putpointer_len(unsigned long long p, int len)
 	unsigned char	hex[19] = {'\0'};
 
 	j = 0;
+	if (p == 0)
+	{
+		write(1, "(nil)", 5);
+		return (len + 5);
+	}
 	while (p > 0)
 	{
 		remainder = p % 16;
@@ -19,7 +24,7 @@ int	ft_putpointer_len(unsigned long long p, int len)
 	}
 	hex[j++] = 'x';
 	hex[j++] = '0';
-	ft_rev_int_tab (hex, j);
-	ft_putstr(hex);
+	ft_rev_unchar_tab (hex, j);
+	ft_putstr_unchar(hex);
 	return (len + j);
 }
