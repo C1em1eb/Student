@@ -1,5 +1,16 @@
 #include "ft_printf.h"
 
+int	ft_putnbr_unsigned_len(unsigned int n, int len)
+{
+	char	*tab;
+
+	tab = ft_uitoa(n);
+	len = len + ft_strlen(tab);
+	ft_putstr(tab);
+	free (tab);
+	return (len);
+}
+
 static unsigned int	ft_nlength_un(unsigned int n)
 {
 	unsigned int	nlength;

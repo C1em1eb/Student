@@ -18,8 +18,9 @@ int	ft_print_hex_low(unsigned int i, int len)
 {
 	unsigned int	remainder;
 	int				j;
-	unsigned char	hex[10] = {'\0'};
+	unsigned char	hex[10];
 
+	ft_bzero(hex, 10);
 	j = 0;
 	if (i == 0)
 	{
@@ -45,8 +46,9 @@ int	ft_print_hex_up(unsigned int i, int len)
 {
 	unsigned int	remainder;
 	int				j;
-	unsigned char	hex[10] = {'\0'};
+	unsigned char	hex[10];
 
+	ft_bzero(hex, 10);
 	j = 0;
 	if (i == 0)
 	{
@@ -94,6 +96,20 @@ void	ft_putstr_unchar(unsigned char *str)
 	while (str[i] != '\0')
 	{
 		write(1, &str[i], 1);
+		i++;
+	}
+}
+
+void	ft_bzero(void *s, size_t n)
+{
+	unsigned char	*p;
+	size_t			i;
+
+	p = s;
+	i = 0;
+	while (i < n)
+	{
+		p[i] = '\0';
 		i++;
 	}
 }

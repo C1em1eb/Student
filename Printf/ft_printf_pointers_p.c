@@ -4,14 +4,12 @@ int	ft_putpointer_len(unsigned long long p, int len)
 {
 	unsigned int	remainder;
 	int				j;
-	unsigned char	hex[19] = {'\0'};
+	unsigned char	hex[19];
 
+	ft_bzero(hex, 19);
 	j = 0;
 	if (p == 0)
-	{
-		write(1, "(nil)", 5);
-		return (len + 5);
-	}
+		return (ft_write_nill(len));
 	while (p > 0)
 	{
 		remainder = p % 16;
@@ -27,4 +25,10 @@ int	ft_putpointer_len(unsigned long long p, int len)
 	ft_rev_unchar_tab (hex, j);
 	ft_putstr_unchar(hex);
 	return (len + j);
+}
+
+int	ft_write_nill(int len)
+{
+	write(1, "(nil)", 5);
+	return (len + 5);
 }
