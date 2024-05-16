@@ -21,6 +21,11 @@ int	ft_print_hex_low(unsigned int i, int len)
 	unsigned char	hex[10] = {'\0'};
 
 	j = 0;
+	if (i == 0)
+	{
+		write(1, "0", 1);
+		return (len + 1);
+	}
 	while (i > 0)
 	{
 		remainder = i % 16;
@@ -31,8 +36,6 @@ int	ft_print_hex_low(unsigned int i, int len)
 			hex[j] = remainder + '0';
 		j++;
 	}
-	//hex[j++] = '0';
-	//hex[j++] = 'x';
 	ft_rev_unchar_tab(hex, j);
 	ft_putstr_unchar(hex);
 	return (len + j);
@@ -45,6 +48,11 @@ int	ft_print_hex_up(unsigned int i, int len)
 	unsigned char	hex[10] = {'\0'};
 
 	j = 0;
+	if (i == 0)
+	{
+		write(1, "0", 1);
+		return (len + 1);
+	}
 	while (i > 0)
 	{
 		remainder = i % 16;
@@ -55,8 +63,6 @@ int	ft_print_hex_up(unsigned int i, int len)
 			hex[j] = remainder + '0';
 		j++;
 	}
-	//hex[j++] = '0';
-	//hex[j++] = 'x';
 	ft_rev_unchar_tab (hex, j);
 	ft_putstr_unchar(hex);
 	return (len + j);

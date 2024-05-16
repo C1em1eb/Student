@@ -22,53 +22,6 @@ int	ft_putnbr_unsigned_len(unsigned int n, int len)
 	return (len);
 }
 
-
-/* int	ft_putnbr_unsigned_len(int n, int len)
-{
-	char	number[11];
-	int		i;
-
-	i = 0;
-	n = (unsigned int)n;
-	if (n == -2147483648)
-		write(1, "2147483648", 10);
-	if (n == 0)
-		write(1, "0", 1);
-	if (n < 0 && n != -2147483648)
-		n = -n;
-	while (n > 0)
-	{
-		number[i] = n % 10 + '0';
-		n = n / 10;
-		i++;
-	}
-	len = len + i;
-	while (i > 0)
-	{
-		i--;
-		write(1, &number[i], 1);
-	}
-	return (len);
-}
-
-void	ft_rev_char_tab(char *tab, int size)
-{
-	int				i;
-	int				j;
-	char	tmp;
-
-	i = 0;
-	j = size - 1;
-	while (i < j)
-	{
-		tmp = tab[j];
-		tab[j] = tab[i];
-		tab[i] = tmp;
-		i++;
-		j--;
-	}
-}
- */
 void	ft_putstr(char *str)
 {
 	int	i;
@@ -79,5 +32,61 @@ void	ft_putstr(char *str)
 		write(1, &str[i], 1);
 		i++;
 	}
+}
+
+static unsigned int	ft_nlength(int n)
+{
+	unsigned int	nlength;
+
+	nlength = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
+		nlength = 1;
+	while (n != 0)
+	{
+		n = n / 10;
+		nlength++;
+	}
+	return (nlength);
+}
+
+static void	ft_fillchars(char *s, unsigned int number, unsigned int nlength)
+{
+	int	i;
+
+	i = nlength - 1;
+	while (number != 0)
+	{
+		s[i] = number % 10 + '0';
+		number = number / 10;
+		i--;
+	}
+	s[nlength] = '\0';
+}
+
+char	*ft_itoa(int n)
+{
+	char			*s;
+	unsigned int	nlength;
+	unsigned int	number;
+
+	nlength = ft_nlength(n);
+	number = n;
+	s = (char *)malloc(sizeof(char) * (nlength + 1));
+	if (s == NULL)
+		return (NULL);
+	if (n == 0)
+	{
+		s[0] = '0';
+		s[1] = '\0';
+	}
+	if (n < 0)
+	{
+		s[0] = '-';
+		number = -number;
+	}
+	ft_fillchars(s, number, nlength);
+	return (s);
 }
 
