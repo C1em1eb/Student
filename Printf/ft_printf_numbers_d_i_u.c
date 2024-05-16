@@ -68,7 +68,7 @@ void	ft_rev_char_tab(char *tab, int size)
 		j--;
 	}
 }
-
+ */
 void	ft_putstr(char *str)
 {
 	int	i;
@@ -80,4 +80,4 @@ void	ft_putstr(char *str)
 		i++;
 	}
 }
- */
+

@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-static unsigned int	ft_nlength(int n)
+static unsigned int	ft_nlength_un(unsigned int n)
 {
 	unsigned int	nlength;
 
@@ -15,7 +15,7 @@ static unsigned int	ft_nlength(int n)
 	return (nlength);
 }
 
-static void	ft_fillchars(char *s, unsigned int number, unsigned int nlength)
+static void	ft_fillchars_un(char *s, unsigned int number, unsigned int nlength)
 {
 	int	i;
 
@@ -33,10 +33,8 @@ char	*ft_uitoa(unsigned int n)
 {
 	char			*s;
 	unsigned int	nlength;
-	unsigned int	number;
 
-	nlength = ft_nlength(n);
-	number = n;
+	nlength = ft_nlength_un(n);
 	s = (char *)malloc(sizeof(char) * (nlength + 1));
 	if (s == NULL)
 		return (NULL);
@@ -45,6 +43,6 @@ char	*ft_uitoa(unsigned int n)
 		s[0] = '0';
 		s[1] = '\0';
 	}
-	ft_fillchars(s, number, nlength);
+	ft_fillchars_un(s, n, nlength);
 	return (s);
 }
