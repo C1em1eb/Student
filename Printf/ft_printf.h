@@ -1,7 +1,7 @@
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include "../Libft/libft.h"
+# include "/Libft/libft.h"
 # include <stdarg.h>
 
 int		ft_putchar_len(char c, int len);

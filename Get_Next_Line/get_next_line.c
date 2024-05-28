@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cleblond <cleblond@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/28 15:30:19 by cleblond          #+#    #+#             */
+/*   Updated: 2024/05/28 16:28:16 by cleblond         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
 /* int main(void)
@@ -5,19 +17,22 @@
 	int		fd;
 	char	*line;
 
+	//fd = open("gnlTester/files/alternate_line_nl_no_nl", O_RDONLY);
 	fd = open("text", O_RDONLY);
+
 	while (1)
 	{
 		line = get_next_line(fd);
 		printf("%s", line);
-		if (line == NULL)
+ 		if (line == NULL)
 			break;
 		free (line);
 	}
+	free (line);
 	close (fd);
 	return (0);
-}
- */
+} */
+
 char	*get_next_line(int fd)
 {
 	char		*buffer;
@@ -28,7 +43,7 @@ char	*get_next_line(int fd)
 	int			len_to_separator;
 	ssize_t		bytes_read;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 
 	buffer = malloc(sizeof(char)* (BUFFER_SIZE + 1));
@@ -37,11 +52,19 @@ char	*get_next_line(int fd)
 	line = NULL;
 	if (stash == NULL)
 		stash = ft_strdup("");
+	//printf("stash initial : %s\n", stash);
 	bytes_read = read(fd, buffer, BUFFER_SIZE);
+	if (bytes_read == 0 || bytes_read == -1)
+	{
+		free (stash);
+		free (buffer);
+		return (NULL);
+	}
 	while (bytes_read > 0)
 	{
 		buffer[bytes_read] = '\0';
 		temp = ft_strjoin(stash, buffer);
+		//printf("1st temp %s\n", temp);
 		free (stash);
 		stash = NULL;
 		stash = temp;
@@ -67,12 +90,17 @@ char	*get_next_line(int fd)
 		stash = NULL;
 		free (buffer);
 		buffer = NULL;
+		//printf("final line %s\n", line);
 		return (line);
 	}
-	free (stash);
-	stash = NULL;
-	free (buffer);
-	buffer = NULL;
+	if (bytes_read == -1)
+	{
+		free (stash);
+		stash = NULL;
+		free (buffer);
+		buffer = NULL;
+		return (NULL);
+	}
 	return (NULL);
 }
 
@@ -81,3 +109,4 @@ void free_and_null(char **ptr)
 	free (*ptr);
 	*ptr = NULL;
 }
+
