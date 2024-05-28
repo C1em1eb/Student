@@ -6,7 +6,7 @@
 /*   By: cleblond <cleblond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 16:05:44 by cleblond          #+#    #+#             */
-/*   Updated: 2024/03/06 16:30:53 by cleblond         ###   ########.fr       */
+/*   Updated: 2024/05/28 15:00:31 by cleblond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_strrchr(const char	*s, int c)
 	i = i - 1;
 	while (i >= 0)
 	{
-		if (p[i] == c)
+		if (p[i] == (unsigned char)c)
 			return (&p[i]);
 		else
 			i--;

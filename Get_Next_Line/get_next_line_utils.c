@@ -86,7 +86,7 @@ char	*ft_strchr(const char *s, int c)
 	}
 	while (p[i])
 	{
-		if (p[i] == c)
+		if (p[i] == (unsigned char)c)
 			return (&p[i]);
 		else if (p[i] != c)
 			i++;

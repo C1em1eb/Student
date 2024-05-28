@@ -1,6 +1,6 @@
 #include "get_next_line.h"
 
-int main(void)
+/* int main(void)
 {
 	int		fd;
 	char	*line;
@@ -17,7 +17,7 @@ int main(void)
 	close (fd);
 	return (0);
 }
-
+ */
 char	*get_next_line(int fd)
 {
 	char		*buffer;
