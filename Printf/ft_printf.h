@@ -1,8 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cleblond <cleblond@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/28 17:07:05 by cleblond          #+#    #+#             */
+/*   Updated: 2024/07/04 16:35:49 by cleblond         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include "/Libft/libft.h"
+# include <unistd.h>
 # include <stdarg.h>
+# include <stdlib.h>
 
 int		ft_putchar_len(char c, int len);
 int		ft_putstr_len(char *s, int len);
@@ -19,5 +32,8 @@ int		ft_printf(const char *format, ...);
 char	*ft_uitoa(unsigned int n);
 int		ft_write_nill(int len);
 void	ft_case_selector(const char *format, va_list args, int *len, int *i);
+void	ft_bzero(void *s, size_t n);
+char	*ft_itoa(int n);
+size_t	ft_strlen(const char *s);
 
 #endif
