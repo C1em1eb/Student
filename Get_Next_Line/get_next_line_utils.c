@@ -1,6 +1,6 @@
 #include "get_next_line.h"
 
-/* char	*ft_strdup(char *src)
+char	*ft_strdup(char *src)
 {
 	int		i;
 	char	*dest;
@@ -107,9 +107,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	substr[i] = '\0';
 	return (substr);
 }
- */
 
-// Dummy implementations of utility functions for demonstration purposes
+
+/* // Dummy implementations of utility functions for demonstration purposes
 char *ft_strdup(const char *s) {
     char *dup = malloc(strlen(s) + 1);
     if (dup) strcpy(dup, s);
@@ -141,3 +141,4 @@ size_t ft_strlen(const char *s) {
 char *ft_strchr(const char *s, int c) {
     return strchr(s, c);
 }
+ */
