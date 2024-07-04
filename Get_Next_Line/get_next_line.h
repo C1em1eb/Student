@@ -15,12 +15,18 @@
 
 char	*get_next_line(int fd);
 ssize_t	read(int fd, void *buf, size_t count);
-char	*ft_strdup(char *src);
-size_t	ft_strlen(const char *s);
-char	*ft_strjoin(char const *s1, char const *s2);
-int	ft_strlen_cons(const char *s);
-char	*ft_strchr(const char *s, int c);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-void	free_and_null(char **ptr);
+//char	*ft_strdup(char *src);
+//size_t	ft_strlen(const char *s);
+//int	ft_strlen_cons(const char *s);
+//char	*ft_strchr(const char *s, int c);
+//char	*ft_substr(char const *s, unsigned int start, size_t len);
+//void	free_and_null(char **ptr);
+//char	*ft_strjoin(const char *s1, char const *s2);
+
+char *ft_strdup(const char *s);
+char *ft_strjoin(char const *s1, char const *s2);
+char *ft_substr(char const *s, unsigned int start, size_t len);
+size_t ft_strlen(const char *s);
+char *ft_strchr(const char *s, int c);
 
 #endif
