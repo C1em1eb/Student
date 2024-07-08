@@ -1,6 +1,6 @@
 #include "get_next_line.h"
 
-char	*ft_strdup(char *src)
+/* char	*ft_strdup(char *src)
 {
 	int		i;
 	char	*dest;
@@ -106,38 +106,43 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	substr[i] = '\0';
 	return (substr);
+} */
+
+// Dummy implementations of utility functions for demonstration purposes
+char *ft_strdup(const char *s)
+{
+	char *dup = malloc(strlen(s) + 1);
+	if (dup) strcpy(dup, s);
+	return dup;
 }
 
-/* // Dummy implementations of utility functions for demonstration purposes
-char *ft_strdup(const char *s) {
-    char *dup = malloc(strlen(s) + 1);
-    if (dup) strcpy(dup, s);
-    return dup;
+char *ft_strjoin(char const *s1, char const *s2)
+{
+	char *join = malloc(strlen(s1) + strlen(s2) + 1);
+	if (join) {
+		strcpy(join, s1);
+		strcat(join, s2);
+	}
+	return join;
 }
 
-char *ft_strjoin(char const *s1, char const *s2) {
-    char *join = malloc(strlen(s1) + strlen(s2) + 1);
-    if (join) {
-        strcpy(join, s1);
-        strcat(join, s2);
-    }
-    return join;
+char *ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char *sub = malloc(len + 1);
+	if (sub) {
+		strncpy(sub, s + start, len);
+		sub[len] = '\0';
+	}
+	return sub;
 }
 
-char *ft_substr(char const *s, unsigned int start, size_t len) {
-    char *sub = malloc(len + 1);
-    if (sub) {
-        strncpy(sub, s + start, len);
-        sub[len] = '\0';
-    }
-    return sub;
+size_t ft_strlen(const char *s)
+{
+	return strlen(s);
 }
 
-size_t ft_strlen(const char *s) {
-    return strlen(s);
+char *ft_strchr(const char *s, int c)
+{
+	return strchr(s, c);
 }
 
-char *ft_strchr(const char *s, int c) {
-    return strchr(s, c);
-}
- */

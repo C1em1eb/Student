@@ -13,12 +13,17 @@
 # include <sys/stat.h>
 # include <fcntl.h>
 
-char	*ft_strdup(char *src);
+/* char	*ft_strdup(char *src);
 size_t	ft_strlen(const char *s);
 char	*ft_strjoin(const char *s1, char const *s2);
 char	*ft_strchr(const char *s, int c);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_substr(char const *s, unsigned int start, size_t len); */
 void	free_and_null(char **ptr);
 char	*get_next_line(int fd);
+char *ft_strdup(const char *s);
+char *ft_strjoin(char const *s1, char const *s2);
+char *ft_substr(char const *s, unsigned int start, size_t len);
+size_t ft_strlen(const char *s);
+char *ft_strchr(const char *s, int c);
 
 #endif
