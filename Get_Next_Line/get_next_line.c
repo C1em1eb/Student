@@ -55,6 +55,8 @@ char	*get_next_line(int fd)
 	while (bytes_read > 0)
 	{
 		bytes_read = read(fd, buffer, BUFFER_SIZE);
+		if (bytes_read < 0)
+			break;
 		buffer[bytes_read] = '\0';
 		temp = ft_strjoin(stash, buffer);
 		free_and_null (&stash);
