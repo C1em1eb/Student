@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line copy.c                               :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cleblond <cleblond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 14:08:38 by cleblond          #+#    #+#             */
-/*   Updated: 2024/07/04 17:20:00 by cleblond         ###   ########.fr       */
+/*   Updated: 2024/07/04 17:56:26 by cleblond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_read_update_stash(int fd, char **stash);
-char	*ft_return_lines(char **stash);
-char	*ft_return_final_line(char **stash);
 void	free_and_null(char **ptr);
-int		ft_update_stash(char **stash, char *buffer);
+void	*get_next_line(int fd);
+char	*ft_read_stash(int fd, char **buffer, char **stash, char **line);
+char *ft_search_extract_line(char **stash, char **buffer);
 
-/* int	main(void)
+int	main(void)
 {
 	int		fd;
 	char	*line;
@@ -34,17 +33,13 @@ int		ft_update_stash(char **stash, char *buffer);
 	}
 	close (fd);
 	return (0);
-} */
+}
 
 char	*get_next_line(int fd)
 {
 	char		*buffer;
-	char		*temp;
 	static char	*stash;
 	char		*line;
-	char		*p_separator;
-	int			len_to_separator;
-	ssize_t		bytes_read;
 
 	buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (buffer == NULL)
@@ -63,52 +58,89 @@ char	*get_next_line(int fd)
 		stash = ft_strdup("");
 		if (stash == NULL)
 		{
-			free_and_null (&buffer);
+			free (buffer);
 			return (NULL);
 		}
 	}
-	stash[ft_strlen(stash)] = '\0';
+	//	stash[ft_strlen(stash)] = '\0';
+	if (ft_read_stash(fd, &buffer, &stash, &line) == NULL)
+	{
+		free (buffer);
+		free (stash);
+		return (NULL);
+	}
+	return (line);
+}
+
+char	*ft_read_stash(int fd, char **buffer, char **stash, char **line)
+{
+	ssize_t		bytes_read;
+	char		*temp;
+
 	bytes_read = 1;
 	while (bytes_read > 0)
 	{
 		bytes_read = read(fd, buffer, BUFFER_SIZE);
 		buffer[bytes_read] = '\0';
 		temp = ft_strjoin(stash, buffer);
-		free_and_null (&stash);
-		stash = temp;
-		p_separator = ft_strchr(stash, '\n');
-		if (p_separator != NULL)
+		if (temp == NULL)
 		{
-			len_to_separator =  p_separator - stash + 1;
-			line = ft_substr(stash, 0, len_to_separator);
-			if (line == NULL)
-			{
-				free_and_null (&stash);
-				free_and_null (&buffer);
-				return (NULL);
-			}
-			temp = ft_strdup(stash + len_to_separator);
-			free_and_null (&stash);
-			stash = temp;
-			free_and_null (&buffer);
-			return (line);
+			free(*stash);
+			free(*buffer);
+			return (NULL);
 		}
+		free(*stash);
+		*stash = temp;
+		if (ft_search_extract_line(stash, buffer) != NULL)
+		break;
 	}
 	if (bytes_read == 0 && stash[0] != '\0')
 	{
-		line = ft_strdup(stash);
+		*line = ft_strdup(stash);
+		if (*line == NULL)
+		{
+			free (*stash);
+			free (*buffer);
+			return (NULL);
+		}
+		free_and_null(&stash);
+		free (*buffer);
+		return (line);
+	}
+	free_and_null (&stash);
+	free_and_null (&buffer);
+	return (NULL);
+}
+
+char *ft_search_extract_line(char **stash, char **buffer)
+{
+	char	*p_separator;
+	int		len_to_separator;
+	char	*temp;
+	char	*line
+
+	p_separator = ft_strchr(stash, '\n');
+	if (p_separator != NULL)
+	{
+		len_to_separator =  p_separator - stash + 1;
+		line = ft_substr(stash, 0, len_to_separator);
 		if (line == NULL)
 		{
 			free_and_null (&stash);
 			free_and_null (&buffer);
 			return (NULL);
 		}
-		free_and_null(&stash);
-		free_and_null (&buffer);
+		temp = ft_strdup(stash + len_to_separator);
+		if (temp == NULL)
+		{
+			free(*stash);
+			free(*buffer);
+			return (NULL);
+		}
+		free_and_null (&stash);
+		*stash = temp;
 		return (line);
 	}
-	free_and_null (&stash);
-	free_and_null (&buffer);
 	return (NULL);
 }
 
