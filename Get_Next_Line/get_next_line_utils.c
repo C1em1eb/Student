@@ -108,7 +108,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (substr);
 }
 
-
 /* // Dummy implementations of utility functions for demonstration purposes
 char *ft_strdup(const char *s) {
     char *dup = malloc(strlen(s) + 1);

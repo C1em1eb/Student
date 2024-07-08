@@ -1,10 +1,6 @@
-
 #include "get_next_line.h"
 
-void	free_and_null(char **ptr);
-char	*get_next_line(int fd);
-
-int	main(void)
+/* int	main(void)
 {
 	int		fd;
 	char	*line;
@@ -21,17 +17,17 @@ int	main(void)
 	}
 	close (fd);
 	return (0);
-}
+} */
 
 char	*get_next_line(int fd)
 {
 	char		*buffer;
 	char		*temp;
-	static char *stash;
+	static char	*stash;
 	char		*line;
 	char		*p_separator;
-	int		 len_to_separator;
-	ssize_t	 bytes_read;
+	int			len_to_separator;
+	ssize_t		bytes_read;
 
 	buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (buffer == NULL)
@@ -66,7 +62,7 @@ char	*get_next_line(int fd)
 		p_separator = ft_strchr(stash, '\n');
 		if (p_separator != NULL)
 		{
-			len_to_separator =  p_separator - stash + 1;
+			len_to_separator = p_separator - stash + 1;
 			line = ft_substr(stash, 0, len_to_separator);
 			if (line == NULL)
 			{
@@ -99,7 +95,7 @@ char	*get_next_line(int fd)
 	return (NULL);
 }
 
-void free_and_null(char **ptr)
+void	free_and_null(char **ptr)
 {
 	free (*ptr);
 	*ptr = NULL;
