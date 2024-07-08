@@ -19,7 +19,7 @@ char	*get_next_line(int fd)
 		stash = ft_strdup("");
 		if (stash == NULL)
 		{
-			free_and_null (&buffer);
+			ft_free_and_null (&buffer);
 			return (NULL);
 		}
 	}
@@ -32,7 +32,7 @@ char	*get_next_line(int fd)
 			break;
 		buffer[bytes_read] = '\0';
 		temp = ft_strjoin(stash, buffer);
-		free_and_null (&stash);
+		ft_free_and_null (&stash);
 		stash = temp;
 		p_separator = ft_strchr(stash, '\n');
 		if (p_separator != NULL)
@@ -41,14 +41,14 @@ char	*get_next_line(int fd)
 			line = ft_substr(stash, 0, len_to_separator);
 			if (line == NULL)
 			{
-				free_and_null (&stash);
-				free_and_null (&buffer);
+				ft_free_and_null (&stash);
+				ft_free_and_null (&buffer);
 				return (NULL);
 			}
 			temp = ft_strdup(stash + len_to_separator);
-			free_and_null (&stash);
+			ft_free_and_null (&stash);
 			stash = temp;
-			free_and_null (&buffer);
+			ft_free_and_null (&buffer);
 			return (line);
 		}
 	}
@@ -57,20 +57,20 @@ char	*get_next_line(int fd)
 		line = ft_strdup(stash);
 		if (line == NULL)
 		{
-			free_and_null (&stash);
-			free_and_null (&buffer);
+			ft_free_and_null (&stash);
+			ft_free_and_null (&buffer);
 			return (NULL);
 		}
-		free_and_null(&stash);
-		free_and_null (&buffer);
+		ft_free_and_null(&stash);
+		ft_free_and_null (&buffer);
 		return (line);
 	}
-	free_and_null (&stash);
-	free_and_null (&buffer);
+	ft_free_and_null (&stash);
+	ft_free_and_null (&buffer);
 	return (NULL);
 }
 
-void	free_and_null(char **ptr)
+void	ft_free_and_null(char **ptr)
 {
 	free (*ptr);
 	*ptr = NULL;
