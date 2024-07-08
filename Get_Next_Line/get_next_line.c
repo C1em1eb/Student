@@ -1,45 +1,18 @@
 #include "get_next_line.h"
 
-/* int	main(void)
-{
-	int		fd;
-	char	*line;
-
-	fd = open("text", O_RDONLY);
-	while (1)
-	{
-		line = get_next_line(fd);
-		if (line == NULL)
-			break ;
-		printf("%s", line);
-		free (line);
-
-	}
-	close (fd);
-	return (0);
-} */
-
 char	*get_next_line(int fd)
 {
 	char		*buffer;
 	char		*temp;
-	static char	*stash;
+	static char *stash;
 	char		*line;
 	char		*p_separator;
-	int			len_to_separator;
-	ssize_t		bytes_read;
+	int		 len_to_separator;
+	ssize_t	 bytes_read;
 
 	buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (buffer == NULL)
 		return (NULL);
-	if (fd < 0 || BUFFER_SIZE <= 0)
-	{
-		free (buffer);
-		buffer = NULL;
-		free (stash);
-		stash = NULL;
-		return (NULL);
-	}
 	line = NULL;
 	if (stash == NULL)
 	{
