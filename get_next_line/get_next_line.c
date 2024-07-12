@@ -1,13 +1,13 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: cleblond <cleblond@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/12 14:26:50 by cleblond          #+#    #+#             */
-/*   Updated: 2024/07/12 14:28:50 by cleblond         ###   ########.fr       */
-/*                                                                            */
+/*																			*/
+/*														:::	  ::::::::   */
+/*   get_next_line.c									:+:	  :+:	:+:   */
+/*													+:+ +:+		 +:+	 */
+/*   By: cleblond <cleblond@student.42.fr>		  +#+  +:+	   +#+		*/
+/*												+#+#+#+#+#+   +#+		   */
+/*   Created: 2024/07/12 14:26:50 by cleblond		  #+#	#+#			 */
+/*   Updated: 2024/07/12 14:32:45 by cleblond		 ###   ########.fr	   */
+/*																			*/
 /* ************************************************************************** */
 
 #include "get_next_line.h"
@@ -15,15 +15,17 @@
 ssize_t	read_and_process(int fd, char *buffer, char **stash, char **line)
 {
 	ssize_t	bytes_read;
+	char	*temp;
 	char	*p_separator;
 
 	bytes_read = read(fd, buffer, BUFFER_SIZE);
 	if (bytes_read < 0)
 		return (-1);
+	buffer[bytes_read] = '\0';
 	temp = ft_strjoin(*stash, buffer);
 	ft_free_and_null(stash);
 	*stash = temp;
-	p#include "get_next_line.h"_separator = ft_strchr(*stash, '\n');
+	p_separator = ft_strchr(*stash, '\n');
 	if (p_separator != NULL)
 	{
 		*line = ft_substr(*stash, 0, (p_separator - *stash + 1));
@@ -37,15 +39,15 @@ ssize_t	read_and_process(int fd, char *buffer, char **stash, char **line)
 	return (bytes_read);
 }
 
-bool	init_stash(char **stash)
+int	init_stash(char **stash)
 {
 	if (*stash == NULL)
 	{
 		*stash = ft_strdup("");
 		if (*stash == NULL)
-			return (false);
+			return (0);
 	}
-	return (true);
+	return (1);
 }
 
 char	*finalize_line(char **stash, char *buffer, char **line)
